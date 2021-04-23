@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tell.me/autobus" xmlns:tns="http://tell.me/autobus" elementFormDefault="qualified">
+    
+    <element name="IngresarViajeRequest">
+        <complexType>
+            <sequence>
+                <element name="viaje" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="IngresarViajeResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="BuscarViajeRequest">
+        <complexType/>
+    </element>
+    <element name="BuscarViajeResponse">
+        <complexType>
+            <sequence>
+                <element name="viajante" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="id" type="int"></element>
+                            <element name="viaje" type="string"></element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="EliminarViajeRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="EliminarViajeResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="ModificarViajeRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+                <element name="viaje" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ModificarViajeResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BuscarViajePorNombreRequest">
+        <complexType>
+            <sequence>
+                <element name="viaje" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BuscarViajePorNombreResponse">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
